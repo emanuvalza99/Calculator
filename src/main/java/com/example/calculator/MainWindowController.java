@@ -6,6 +6,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import java.lang.Math;
 
 public class MainWindowController {
     @FXML private Pane titlePane;
@@ -47,6 +48,11 @@ public class MainWindowController {
                 case "*" -> lblResult.setText((num1*num2) + "");
                 case "/" -> lblResult.setText((num1/num2) + "");
             }
+            operator = ".";
+        }
+        else if(symbol.equals("Sqrt")) {
+            num1 = Math.sqrt(Double.parseDouble(lblResult.getText()));
+            lblResult.setText(String.valueOf(num1));
             operator = ".";
         }
         else if(symbol.equals("Clear")) {
